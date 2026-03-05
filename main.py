@@ -1,6 +1,14 @@
-def main():
-    print("Hello from receipt-formatter!")
+def add_tax(receipt):
+    return f"{receipt}\nTax: $0.00"
 
 
-if __name__ == "__main__":
-    main()
+def add_header(receipt):
+    return f"=== RECEIPT ===\n{receipt}"
+
+
+def add_footer(receipt):
+    return f"{receipt}\n=== THANK YOU ==="
+
+
+def format_receipt(receipt):
+    return add_footer(add_header(add_tax(receipt)))
